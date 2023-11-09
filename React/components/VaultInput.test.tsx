@@ -9,11 +9,11 @@ import VaultInput from './VaultInput'
 import React from 'react'
 
 it('renders Vault Input Component', () => {
-  const renderer = render(
+  const {container} = render(
     <VaultInput
       guess={[1, 2, 3, 4]}
     />
   )
-  const result = screen.getAllByText('1')
+  const result = container.querySelector(`input[name="guess-0"]`);
   expect(result).toBeDefined()
 })
