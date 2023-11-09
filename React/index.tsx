@@ -1,0 +1,1 @@
+export { VaultAuthComponent } from './components'
