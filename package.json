@@ -1,7 +1,7 @@
 {
   "name": "vault-auth-component",
   "version": "1.0.0",
-  "main": "lib/index.ts",
+  "main": "React/index.ts",
   "license": "MIT",
   "dependencies": {
     "@anatine/zod-mock": "^3.13.3",
