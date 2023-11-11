@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "main": "React/index.ts",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jerome-bienaime/vaultauth.git"
+  },
   "dependencies": {
     "@anatine/zod-mock": "^3.13.3",
     "@faker-js/faker": "^8.2.0",
@@ -22,7 +26,10 @@
     "lint": "prettier --write .",
     "test": "jest",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "change": "beachball change",
+    "checkchange": "beachball check",
+    "release": "beachball publish"
   },
   "resolutions": {
     "string-width": "^4",
@@ -48,6 +55,7 @@
     "@types/react": "^18.2.37",
     "@typescript-eslint/eslint-plugin": "^6.4.0",
     "babel-jest": "^29.7.0",
+    "beachball": "^2.39.0",
     "commitlint": "^18.2.0",
     "commitlint-config-gitmoji": "^2.3.1",
     "eslint": "^8.0.1",
