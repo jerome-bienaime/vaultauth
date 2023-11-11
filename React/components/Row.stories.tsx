@@ -5,7 +5,7 @@ import type {
   StoryObj,
 } from '@storybook/react'
 
-import ColumnComponent from './Column'
+import RowComponent from './Row'
 import theme from './theme'
 import { ThemeUIProvider } from 'theme-ui'
 import {
@@ -19,9 +19,9 @@ var tabster = createTabster(window)
 getMover(tabster)
 getGroupper(tabster)
 
-const meta: Meta<typeof ColumnComponent> = {
-  title: 'Column',
-  component: ColumnComponent,
+const meta: Meta<typeof RowComponent> = {
+  title: 'Row',
+  component: RowComponent,
   parameters: {
     layout: 'fullscreen',
   },
@@ -40,10 +40,10 @@ const meta: Meta<typeof ColumnComponent> = {
 
 export default meta
 
-type Story = StoryObj<typeof ColumnComponent>
+type Story = StoryObj<typeof RowComponent>
 
 export const Primary: Story = {
   args: {
-    columns: [0, 1, 2],
+    Row: [0, 1, 2],
   },
 }

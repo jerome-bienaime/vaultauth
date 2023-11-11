@@ -5,12 +5,12 @@ import {
   screen,
   render,
 } from '@testing-library/react'
-import ColumnComponent from './Column'
+import RowComponent from './Row'
 import React from 'react'
 
-it("renders a Column of Cases", () => {
+it("renders a Row of Cases", () => {
   render(
-    <ColumnComponent columns={["a","b","c"]} />
+    <RowComponent Row={["a","b","c"]} />
   )
 
   const result = screen.getAllByText("a")

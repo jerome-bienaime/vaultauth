@@ -13,17 +13,17 @@ const NumberTuple = z.tuple([
   z.number(),
 ])
 
-// A Column can be either a tuple of 3 strings
+// A Row can be either a tuple of 3 strings
 // or a tuple of 4 numbers
-const ColumnSchema = z.union([
+const RowSchema = z.union([
   StringTuple,
   NumberTuple,
 ])
 
-// A Row is a tuple of 3 columns
+// A Row is a tuple of 3 Rows
 const Row = z.tuple([
-  ColumnSchema,
-  ColumnSchema,
-  ColumnSchema,
+  RowSchema,
+  RowSchema,
+  RowSchema,
 ])
 export default Row

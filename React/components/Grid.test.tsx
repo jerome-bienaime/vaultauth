@@ -8,7 +8,7 @@ import {
 import Grid from './Grid'
 import React from 'react'
 
-it('renders a Grid of Columns', () => {
+it('renders a Grid of Rows', () => {
   const renderer = render(
     <Grid
       shuffleArray={[
