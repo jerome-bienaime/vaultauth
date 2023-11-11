@@ -1,16 +1,29 @@
+/** @jsxImportSource theme-ui */
+
 import type { Meta, StoryObj } from '@storybook/react';
 
 import CaseComponent from './Case';
+import theme from './theme'
+import { ThemeUIProvider } from 'theme-ui';
 
-const meta = {
+
+const meta:Meta<typeof CaseComponent> = {
   title: 'Case',
   component: CaseComponent,
   parameters: {
     layout: 'fullscreen',
   },
-} satisfies Meta<typeof CaseComponent>;
+  decorators: [
+    (Story: any) => (
+      <ThemeUIProvider theme={theme}>
+        <Story />
+      </ThemeUIProvider>
+    ),
+  ],
+}
 
 export default meta;
+
 type Story = StoryObj<typeof CaseComponent>;
 
 export const Primary: Story = {
