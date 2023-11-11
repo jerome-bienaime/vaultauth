@@ -3,7 +3,7 @@
 import React from 'react'
 import {
   type Case as CaseType,
-  type Column,
+  type Row,
 } from '../../lib'
 import CaseComponent from './Case'
 import { Grid } from 'theme-ui'
@@ -12,12 +12,12 @@ import {
   getTabsterAttribute,
 } from 'tabster'
 
-interface ColumnProps {
-  columns: Column
+interface RowProps {
+  Row: Row
 }
 
-export default function Column(
-  props: ColumnProps
+export default function Row(
+  props: RowProps
 ) {
   return (
     <Grid
@@ -31,12 +31,12 @@ export default function Column(
         },
       })}
       tabIndex={0}
-      title='Column of cases'
+      title='Row of cases'
     >
-      {props.columns.map((column: CaseType) => (
+      {props.Row.map((Row: CaseType) => (
         <CaseComponent
-          case={column}
-          key={column}
+          case={Row}
+          key={Row}
         />
       ))}
     </Grid>

@@ -1,9 +1,9 @@
 import React from 'react'
 import type {
   ShuffleArray,
-  Column,
+  Row,
 } from '../../lib'
-import ColumnComponent from './Column'
+import RowComponent from './Row'
 
 interface GridProps {
   shuffleArray: ShuffleArray
@@ -11,10 +11,10 @@ interface GridProps {
 
 export default function Grid(props: GridProps) {
   return props.shuffleArray.map(
-    (columns: Column, index: number) => (
-      <ColumnComponent
+    (Rows: Row, index: number) => (
+      <RowComponent
         key={index}
-        columns={columns}
+        Rows={Rows}
       />
     )
   )
