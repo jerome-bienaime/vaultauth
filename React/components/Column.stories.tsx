@@ -1,13 +1,25 @@
 /** @jsxImportSource theme-ui */
 
-import type { Meta, StoryObj } from '@storybook/react';
+import type {
+  Meta,
+  StoryObj,
+} from '@storybook/react'
 
-import ColumnComponent from './Column';
+import ColumnComponent from './Column'
 import theme from './theme'
-import { ThemeUIProvider } from 'theme-ui';
+import { ThemeUIProvider } from 'theme-ui'
+import {
+  createTabster,
+  getGroupper,
+  getMover,
+  getTabsterAttribute,
+} from 'tabster'
 
+var tabster = createTabster(window)
+getMover(tabster)
+getGroupper(tabster)
 
-const meta:Meta<typeof ColumnComponent> = {
+const meta: Meta<typeof ColumnComponent> = {
   title: 'Column',
   component: ColumnComponent,
   parameters: {
@@ -16,18 +28,22 @@ const meta:Meta<typeof ColumnComponent> = {
   decorators: [
     (Story: any) => (
       <ThemeUIProvider theme={theme}>
-        <Story />
+        <div
+          {...getTabsterAttribute({ root: {} })}
+        >
+          <Story />
+        </div>
       </ThemeUIProvider>
     ),
   ],
 }
 
-export default meta;
+export default meta
 
-type Story = StoryObj<typeof ColumnComponent>;
+type Story = StoryObj<typeof ColumnComponent>
 
 export const Primary: Story = {
   args: {
-    columns: [0,1,2]
-  }
+    columns: [0, 1, 2],
+  },
 }
