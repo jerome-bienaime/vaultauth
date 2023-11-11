@@ -4,6 +4,12 @@ import { Case } from '../../lib'
 interface CaseProps {
   case: Case
 }
-export default function Case(props: CaseProps) {
-  return <div className='case'>{props.case.toString()}</div>
+export default function CaseComponent(
+  props: CaseProps
+) {
+  return (
+    <button className='case' type="button">
+      {props.case.toString()}
+    </button>
+  )
 }
