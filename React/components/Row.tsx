@@ -23,15 +23,6 @@ export default function Row(
     <Grid
       gap={2}
       columns={3}
-      {...getTabsterAttribute({
-        groupper: {
-          tabbability:
-            Types.GroupperTabbabilities
-              .LimitedTrapFocus,
-        },
-      })}
-      tabIndex={0}
-      title='Row of cases'
     >
       {props.Row.map((Row: CaseType) => (
         <CaseComponent
