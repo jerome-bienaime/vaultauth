@@ -7,6 +7,26 @@ export default {
   colors: {
     text: '#000',
     background: '#fff',
-    primary: '#33e',
+    primary: '#07c',
+    modes: {
+      dark: {
+        text: '#fff',
+        background: '#000',
+        primary: '#0cf',
+      },
+    },
+  },
+  buttons: {
+    primary: {
+      color: 'background',
+      bg: 'primary',
+      '&:hover': {
+        bg: 'text',
+      },
+    },
+    secondary: {
+      color: 'background',
+      bg: 'secondary',
+    },
   },
 }
