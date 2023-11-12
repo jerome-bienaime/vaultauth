@@ -13,7 +13,6 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "standard": "^17.1.0",
     "tabster": "^5.0.1",
     "theme-ui": "^0.16.1",
     "zod": "^3.22.4"
@@ -93,6 +92,7 @@
     "rollup-plugin-terser": "^7.0.2",
     "rollup-plugin-typescript2": "^0.36.0",
     "rollup-plugin-visualizer": "^5.9.2",
+    "standard": "^17.1.0",
     "storybook": "7.5.3",
     "storybook-addon-theme-ui": "^0.1.5",
     "strip-ansi": "^7.1.0",
