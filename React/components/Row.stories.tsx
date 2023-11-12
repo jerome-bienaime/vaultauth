@@ -20,7 +20,7 @@ getMover(tabster)
 getGroupper(tabster)
 
 const meta: Meta<typeof RowComponent> = {
-  title: 'Row',
+  title: 'component/Row',
   component: RowComponent,
   parameters: {
     layout: 'fullscreen',

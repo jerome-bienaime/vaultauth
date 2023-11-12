@@ -10,7 +10,7 @@ import theme from './theme'
 import { ThemeUIProvider } from 'theme-ui'
 
 const meta: Meta<typeof VaultInputComponent> = {
-  title: 'VaultInput',
+  title: 'component/VaultInput',
   component: VaultInputComponent,
   parameters: {
     layout: 'fullscreen',
