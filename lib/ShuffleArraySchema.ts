@@ -1,17 +1,17 @@
 // ShuffleArraySchema.ts
 import { z } from 'zod'
 
+const Letter = z.string().length(1)
+
 const StringTuple = z.tuple([
-  z.string(),
-  z.string(),
-  z.string(),
+  Letter,
+  Letter,
+  Letter,
 ])
 
-const NumberTuple = z.tuple([
-  z.number(),
-  z.number(),
-  z.number(),
-])
+const Digit = z.number().positive().max(9)
+
+const NumberTuple = z.tuple([Digit, Digit, Digit])
 
 // A Row can be either a tuple of 3 strings
 // or a tuple of 4 numbers
