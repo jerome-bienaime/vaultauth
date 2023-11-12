@@ -9,7 +9,7 @@ const StringTuple = z.tuple([
   Letter,
 ])
 
-const Digit = z.number().positive().max(9)
+const Digit = z.number().min(1).max(9)
 
 const NumberTuple = z.tuple([Digit, Digit, Digit])
 
@@ -21,9 +21,9 @@ const RowSchema = z.union([
 ])
 
 // A Row is a tuple of 3 Rows
-const Row = z.tuple([
+const ShuffleArraySchema = z.tuple([
   RowSchema,
   RowSchema,
   RowSchema,
 ])
-export default Row
+export default ShuffleArraySchema
