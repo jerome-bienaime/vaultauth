@@ -29,7 +29,7 @@
     "change": "beachball change",
     "checkchange": "beachball check",
     "release": "beachball publish",
-    "build": "rollup -c --bundleConfigAsCjs"
+    "build": "npx rollup -c --bundleConfigAsCjs"
   },
   "resolutions": {
     "string-width": "^4",
