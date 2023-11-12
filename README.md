@@ -20,6 +20,33 @@ pnpm add vault-auth-component
 
 ## Usage
 
+### as a React component
+
+```typescript
+// my-component.tsx|jsx
+
+import {VaultAuthComponent} from "vault-auth-component"
+
+export default function MyComponent() {
+
+  // Keypad data coming from external ressource
+  const shuffleArray =
+  [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9],
+  ]
+  // User vault pass
+  const vaultPass = [1,5,7,9]
+
+  return <VaultAuthComponent
+    shuffleArray={shuffleArray}
+    vaultPass={vaultPass}
+  />
+}
+
+```
+
 ### as a library
 
 ```typescript

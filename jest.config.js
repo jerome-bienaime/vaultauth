@@ -1,5 +1,6 @@
 module.exports = {
   transform: {
-    '^.+\\.(t|j)sx?$': '@swc/jest',
+    '^.+\\.tsx?$': '@swc/jest',
+    '^.+\\.jsx?$': 'babel-jest',
   },
 }
