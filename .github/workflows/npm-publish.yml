@@ -15,7 +15,6 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 20
-      - run: yarn install --pure-lockfile
       - run: yarn build
       - run: yarn test
 
@@ -28,7 +27,6 @@ jobs:
         with:
           node-version: 20
           registry-url: https://registry.npmjs.org/
-      - run: yarn install --pure-lockfile
       - run: yarn build
       - run: yarn publish
         env:
