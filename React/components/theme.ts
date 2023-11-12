@@ -16,6 +16,9 @@ export default {
       },
     },
   },
+  sizes: {
+    container: 320
+  },
   buttons: {
     primary: {
       color: 'background',
