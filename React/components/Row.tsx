@@ -7,10 +7,6 @@ import {
 } from '../../lib'
 import CaseComponent from './Case'
 import { Grid } from 'theme-ui'
-import {
-  Types,
-  getTabsterAttribute,
-} from 'tabster'
 
 interface RowProps {
   Row: Row
@@ -24,10 +20,10 @@ export default function Row(
       gap={2}
       columns={3}
     >
-      {props.Row.map((Row: CaseType) => (
+      {props.Row.map((row: CaseType) => (
         <CaseComponent
-          case={Row}
-          key={Row}
+          case={row}
+          key={row}
         />
       ))}
     </Grid>
