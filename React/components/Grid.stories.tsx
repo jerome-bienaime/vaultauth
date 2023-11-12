@@ -14,6 +14,8 @@ import {
   getMover,
   getTabsterAttribute,
 } from 'tabster'
+import { generateMock } from '@anatine/zod-mock'
+import { ShuffleArraySchema } from '../../lib'
 
 var tabster = createTabster(window)
 getMover(tabster)
@@ -44,6 +46,8 @@ type Story = StoryObj<typeof GridComponent>
 
 export const Primary: Story = {
   args: {
-    shuffleArray: [[0, 1, 2], [3,4,5],[6,7,8]],
+    shuffleArray: generateMock(
+      ShuffleArraySchema
+    ),
   },
 }
