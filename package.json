@@ -1,7 +1,9 @@
 {
   "name": "vault-auth-component",
   "version": "1.0.0",
-  "main": "React/index.ts",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/index.d.ts",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -34,7 +36,8 @@
     "build-storybook": "storybook build",
     "change": "beachball change",
     "checkchange": "beachball check",
-    "release": "beachball publish"
+    "release": "beachball publish",
+    "build": "rollup -c --bundleConfigAsCjs"
   },
   "resolutions": {
     "string-width": "^4",
@@ -44,6 +47,9 @@
   "devDependencies": {
     "@babel/preset-env": "^7.23.2",
     "@babel/preset-react": "^7.22.15",
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-typescript": "^11.1.5",
     "@storybook/addon-essentials": "7.5.3",
     "@storybook/addon-interactions": "7.5.3",
     "@storybook/addon-links": "7.5.3",
@@ -57,6 +63,7 @@
     "@types/jest": "^29.5.8",
     "@types/lodash": "^4.14.201",
     "@types/react": "^18.2.37",
+    "@types/rollup-plugin-peer-deps-external": "^2",
     "@typescript-eslint/eslint-plugin": "^6.4.0",
     "babel-jest": "^29.7.0",
     "beachball": "^2.39.0",
@@ -75,6 +82,10 @@
     "jsdom": "^22.1.0",
     "lint-staged": "^15.0.2",
     "react-test-renderer": "^18.2.0",
+    "rollup": "^4.3.1",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-typescript2": "^0.36.0",
     "storybook": "7.5.3",
     "strip-ansi": "^7.1.0",
     "ts-jest": "^29.1.1",
