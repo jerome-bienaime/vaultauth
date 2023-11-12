@@ -22,7 +22,7 @@ getMover(tabster)
 getGroupper(tabster)
 
 const meta: Meta<typeof GridComponent> = {
-  title: 'Grid',
+  title: 'layout/Grid',
   component: GridComponent,
   parameters: {
     layout: 'fullscreen',

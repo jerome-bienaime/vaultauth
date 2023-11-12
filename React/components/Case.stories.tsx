@@ -8,7 +8,7 @@ import { ThemeUIProvider } from 'theme-ui';
 
 
 const meta:Meta<typeof CaseComponent> = {
-  title: 'Case',
+  title: 'atoms/Case',
   component: CaseComponent,
   parameters: {
     layout: 'fullscreen',
