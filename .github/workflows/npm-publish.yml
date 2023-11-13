@@ -20,7 +20,7 @@ jobs:
         with:
           node-version: 20
           registry-url: https://registry.npmjs.org/
-      - run: yarn --frozen-lockfile
+      - run: yarn --frozen-lockfile --silent
       - run: yarn lint
       - run: yarn build
       - run: yarn test
