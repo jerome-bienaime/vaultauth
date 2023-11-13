@@ -104,7 +104,7 @@ to discuss what you would like to change.
 
 Please make sure to update tests as appropriate.
 
-The repo now has an examples project powered by Storybook. Just run `npm run storybook` or `yarn storybook`
+The repo now has an examples project powered by Storybook. Just run `npm run storybook`, `yarn storybook` or `pnpm run storybook`
 
 ## License
 
