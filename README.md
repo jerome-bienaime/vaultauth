@@ -46,10 +46,12 @@ export default function MyComponent() {
   const vaultPass = [1,5,7,9]
 
   // Use theme-ui under the hood
-  return <ThemeUIProvider theme={theme}><VaultAuthComponent
+  return <ThemeUIProvider theme={theme}>
+  <VaultAuthComponent
     shuffleArray={shuffleArray}
     vaultPass={vaultPass}
-  /></ThemeUIProvider>
+  />
+  </ThemeUIProvider>
 }
 ```
 
