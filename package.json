@@ -26,9 +26,6 @@
     "test": "jest",
     "storybook": "dotenv -- bash -c 'storybook dev -p $STORYBOOK_PORT'",
     "build-storybook": "storybook build",
-    "change": "beachball change",
-    "checkchange": "beachball check",
-    "release": "beachball publish",
     "build": "npx rollup -c --bundleConfigAsCjs"
   },
   "resolutions": {
@@ -67,7 +64,6 @@
     "@types/rollup-plugin-peer-deps-external": "^2",
     "@typescript-eslint/eslint-plugin": "^6.4.0",
     "babel-jest": "^29.7.0",
-    "beachball": "^2.39.0",
     "commitlint": "^18.2.0",
     "commitlint-config-gitmoji": "^2.3.1",
     "dotenv": "^16.3.1",
