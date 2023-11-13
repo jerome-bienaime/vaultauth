@@ -3,18 +3,38 @@ import {
   Container,
   Grid as GridUI,
 } from 'theme-ui'
-import type { ShuffleArray, Row } from '../../lib'
+import type {
+  ShuffleArray,
+  Row,
+  Case,
+} from '../../lib'
 import RowComponent from './Row'
 import {
   getTabsterAttribute,
   Types,
 } from 'tabster'
 
-interface GridProps {
-  shuffleArray: ShuffleArray
+interface ClickableCase {
+  case: Case
+  onClick: (value: Case) => void
 }
 
-export default function GridComponent(props: GridProps) {
+type ClickableRow = [
+  ClickableCase,
+  ClickableCase,
+  ClickableCase,
+]
+interface GridProps {
+  shuffleArray: [
+    ClickableRow,
+    ClickableRow,
+    ClickableRow,
+  ]
+}
+
+export default function GridComponent(
+  props: GridProps
+) {
   return (
     <Container>
       <GridUI
@@ -30,7 +50,7 @@ export default function GridComponent(props: GridProps) {
         title='Grid'
       >
         {props.shuffleArray.map(
-          (rows: Row, index: number) => (
+          (rows: ClickableRow, index: number) => (
             <RowComponent
               key={index}
               Row={rows}

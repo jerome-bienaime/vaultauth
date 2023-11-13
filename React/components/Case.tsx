@@ -4,6 +4,9 @@ import { Button } from 'theme-ui'
 
 interface CaseProps {
   case: Case
+  onClick: (
+    value: Case
+  ) => void
 }
 export default function CaseComponent(
   props: CaseProps
@@ -13,6 +16,7 @@ export default function CaseComponent(
       className='case'
       type='button'
       variant='primary'
+      onClick={() => props.onClick(props.case)}
     >
       {props.case.toString()}
     </Button>
