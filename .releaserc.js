@@ -1,4 +1,4 @@
-// in ".releaserc.js" or "release.config.js"
+// ".releaserc.js"
 
 const { promisify } = require('util')
 const dateFormat = require('dateformat')
