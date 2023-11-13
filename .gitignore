@@ -132,3 +132,6 @@ dist
 
 # visualizer rollup
 stats.html
+
+# local unwanted files
+note
