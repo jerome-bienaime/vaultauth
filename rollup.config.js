@@ -24,7 +24,7 @@ export default [
     external: ['react', 'react-dom'],
     plugins: [
       json(),
-      external(),
+      external({ includeDependencies: true }),
       resolve(),
       commonjs(),
       typescript({
@@ -58,7 +58,7 @@ export default [
       },
     ],
     plugins: [
-      external(),
+      external({ includeDependencies: true }),
       resolve(),
       commonjs(),
       typescript({
@@ -92,7 +92,7 @@ export default [
     ],
     plugins: [
       json(),
-      external(),
+      external({ includeDependencies: true }),
       resolve(),
       commonjs(),
       typescript({
