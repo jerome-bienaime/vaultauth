@@ -4,24 +4,14 @@
 name: publish
 
 on:
+  push:
+    branches:
+      - main
   release:
     types: [created]
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 20
-      - run: rm yarn.lock
-      - run: yarn
-      - run: yarn build
-      - run: yarn test
-
   publish-npm:
-    needs: build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -29,9 +19,9 @@ jobs:
         with:
           node-version: 20
           registry-url: https://registry.npmjs.org/
-      - run: rm yarn.lock
-      - run: yarn
+      - run: yarn --frozen-lockfile
       - run: yarn build
+      - run: yarn test
       - run: yarn publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
