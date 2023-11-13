@@ -35,7 +35,7 @@
     "strip-ansi": "^6"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
+    "@arriere-aride:registry": "https://npm.pkg.github.com"
   },
   "devDependencies": {
     "@anatine/zod-mock": "^3.13.3",
