@@ -3971,7 +3971,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@semantic-release/npm@npm:^11.0.0":
+"@semantic-release/npm@npm:^11.0.0, @semantic-release/npm@npm:^11.0.1":
   version: 11.0.1
   resolution: "@semantic-release/npm@npm:11.0.1"
   dependencies:
@@ -17833,6 +17833,7 @@ __metadata:
     "@rollup/plugin-json": "npm:^6.0.1"
     "@rollup/plugin-node-resolve": "npm:^15.2.3"
     "@rollup/plugin-typescript": "npm:^11.1.5"
+    "@semantic-release/npm": "npm:^11.0.1"
     "@storybook/addon-essentials": "npm:7.5.3"
     "@storybook/addon-interactions": "npm:7.5.3"
     "@storybook/addon-links": "npm:7.5.3"

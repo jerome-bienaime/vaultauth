@@ -1,6 +1,6 @@
 {
   "name": "vault-auth-component",
-  "version": "0.0.0-development",
+  "version": "1.0.6",
   "main": "dist/cjs/index.js",
   "mainModule": "dist/esm/index.js",
   "lib": "dist/lib/cjs/index.js",
