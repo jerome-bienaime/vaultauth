@@ -1,1 +1,1 @@
-export { VaultAuthComponent } from './components'
+export { VaultAuthComponent,theme } from './components'

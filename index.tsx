@@ -1,2 +1,5 @@
 export * as lib from './lib'
-export { VaultAuthComponent } from './React'
+export {
+  VaultAuthComponent,
+  theme,
+} from './React'
