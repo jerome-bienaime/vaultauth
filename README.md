@@ -25,12 +25,16 @@ pnpm add vault-auth-component
 ### as a React component
 
 ```typescript
+/** @jsxImportSource theme-ui */
 // my-component.tsx|jsx
 
-import {VaultAuthComponent} from "vault-auth-component"
+import {
+  VaultAuthComponent,
+  theme
+  } from "vault-auth-component";
+import { ThemeUIProvider } from "theme-ui";
 
 export default function MyComponent() {
-
   // Keypad data coming from external ressource
   const shuffleArray =
   [
@@ -41,10 +45,11 @@ export default function MyComponent() {
   // User vault pass
   const vaultPass = [1,5,7,9]
 
-  return <VaultAuthComponent
+  // Use theme-ui under the hood
+  return <ThemeUIProvider theme={theme}><VaultAuthComponent
     shuffleArray={shuffleArray}
     vaultPass={vaultPass}
-  />
+  /></ThemeUIProvider>
 }
 ```
 
