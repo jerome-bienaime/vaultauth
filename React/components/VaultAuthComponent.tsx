@@ -5,8 +5,6 @@ import {
 } from '../../lib'
 import GridComponent from './Grid'
 import VaultInputComponent from './VaultInput'
-import { ThemeUIProvider } from 'theme-ui'
-import theme from './theme'
 
 interface VaultAuthComponentProps {
   shuffleArray: ShuffleArray
@@ -17,14 +15,14 @@ function VaultAuthComponent(
   props: VaultAuthComponentProps
 ) {
   return (
-    <ThemeUIProvider theme={theme}>
+    <>
       <GridComponent
         shuffleArray={props.shuffleArray}
       />
       <VaultInputComponent
         guess={props.vaultPass}
       />
-    </ThemeUIProvider>
+    </>
   )
 }
 export default VaultAuthComponent
