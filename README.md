@@ -46,17 +46,18 @@ export default function MyComponent() {
     vaultPass={vaultPass}
   />
 }
-
 ```
 
 ### as a library
 
 ```typescript
-import {
+import { lib } from 'vault-auth-component'
+
+const {
   ShuffleArraySchema,
   ValueInputSchema,
   VaultValidate,
-} from 'vault-auth-component'
+} = lib
 
 /* shuffleArray data validation */
 const shuffleArray = ShuffleArraySchema.safeParse(
