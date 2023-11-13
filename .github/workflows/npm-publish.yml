@@ -27,6 +27,8 @@ jobs:
       - run: yarn build
       - run: yarn test
       - run: yarn semantic-release
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       # - run: yarn publish
       #   env:
       #     NODE_AUTH_TOKEN: ${{secrets.npm_token}}
