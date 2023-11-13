@@ -107,3 +107,5 @@ Please make sure to update tests as appropriate.
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
+
+![https://twitter.com/trodrigues/status/509301317467373571](https://cloud.githubusercontent.com/assets/908178/6091690/cc86f58c-aeb8-11e4-94cb-15f15f486cde.png)
