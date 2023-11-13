@@ -22,6 +22,7 @@ const meta: Meta<typeof CaseComponent> = {
       </ThemeUIProvider>
     ),
   ],
+  argTypes: { onClick: { action: 'clicked' } },
 }
 
 export default meta
@@ -31,5 +32,7 @@ type Story = StoryObj<typeof CaseComponent>
 export const Primary: Story = {
   args: {
     case: 0,
+    onClick: (value) => console.log(value)
   },
+  
 }

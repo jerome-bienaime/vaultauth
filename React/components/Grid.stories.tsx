@@ -15,7 +15,7 @@ import {
   getTabsterAttribute,
 } from 'tabster'
 import { generateMock } from '@anatine/zod-mock'
-import { ShuffleArraySchema } from '../../lib'
+import { Case, ShuffleArraySchema } from '../../lib'
 
 var tabster = createTabster(window)
 getMover(tabster)
@@ -42,12 +42,30 @@ const meta: Meta<typeof GridComponent> = {
 
 export default meta
 
+function click(value: Case) {
+  console.log(value)
+}
+
 type Story = StoryObj<typeof GridComponent>
 
 export const Primary: Story = {
   args: {
-    shuffleArray: generateMock(
-      ShuffleArraySchema
-    ),
+    shuffleArray: [
+      [
+        { case: 0, onClick: click },
+        { case: 1, onClick: click },
+        { case: 2, onClick: click },
+      ],
+      [
+        { case: 3, onClick: click },
+        { case: 4, onClick: click },
+        { case: 5, onClick: click },
+      ],
+      [
+        { case: 6, onClick: click },
+        { case: 7, onClick: click },
+        { case: 8, onClick: click },
+      ],
+    ],
   },
 }
