@@ -25,11 +25,7 @@ type ClickableRow = [
   ClickableCase,
 ]
 interface GridProps {
-  shuffleArray: [
-    ClickableRow,
-    ClickableRow,
-    ClickableRow,
-  ]
+  shuffleArray: ClickableRow[]
 }
 
 export default function GridComponent(
