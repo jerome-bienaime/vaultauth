@@ -14,13 +14,15 @@ on:
 jobs:
   publish-npm:
     runs-on: ubuntu-latest
+    if: ${{ !contains(github.event.head_commit.message, '[ci skip]') }}
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           node-version: 20
           registry-url: https://registry.npmjs.org/
-      - run: yarn --immutable --silent
+          cache: 'yarn'
+      - run: yarn
       - run: yarn lint
       - run: yarn build
       - run: yarn test
