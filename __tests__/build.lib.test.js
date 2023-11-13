@@ -1,6 +1,6 @@
 // build.lib.test.js
-import libAsCJS from '../dist/cjs/index.js'
-const libAsESM = require('../dist/esm/index.js')
+import libAsCJS from '../dist/lib/cjs/index.js'
+const libAsESM = require('../dist/lib/esm/index.js')
 
 test('should build library with cjs file', () => {
   expect(libAsCJS).toBeDefined()
