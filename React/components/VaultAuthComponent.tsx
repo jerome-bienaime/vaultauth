@@ -2,12 +2,23 @@
 import {
   VaultInput,
   ShuffleArray,
+  Case,
 } from '../../lib'
 import GridComponent from './Grid'
 import VaultInputComponent from './VaultInput'
 
+interface ClickableCase {
+  case: Case
+  onClick: (value: Case) => void
+}
+
+type ClickableRow = [
+  ClickableCase,
+  ClickableCase,
+  ClickableCase,
+]
 interface VaultAuthComponentProps {
-  shuffleArray: ShuffleArray
+  shuffleArray: ClickableRow[]
   vaultPass: VaultInput
 }
 
