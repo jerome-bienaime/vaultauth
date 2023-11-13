@@ -42,24 +42,56 @@ export default [
       visualizer(),
     ],
   },
-
   {
     input: 'lib/index.ts',
     output: [
       {
-        file: packageJson.main,
+        file: packageJson.lib,
         format: 'cjs',
         sourcemap: true,
         name: 'vault-auth-lib',
       },
       {
-        file: packageJson.module,
+        file: packageJson.libModule,
         format: 'esm',
         sourcemap: true,
       },
     ],
-
     plugins: [
+      external(),
+      resolve(),
+      commonjs(),
+      typescript({
+        tsconfig: './tsconfig.json',
+        tsconfigOverride: {
+          compilerOptions: {
+            module: 'ES2015',
+            moduleResolution: 'node10',
+          },
+        },
+        rollupCommonJSResolveHack: false,
+        clean: true,
+      }),
+      terser(),
+    ],
+  },
+  {
+    input: 'index.tsx',
+    output: [
+      {
+        file: packageJson.main,
+        format: 'cjs',
+        sourcemap: true,
+        name: 'vault-auth-main',
+      },
+      {
+        file: packageJson.mainModule,
+        format: 'esm',
+        sourcemap: true,
+      },
+    ],
+    plugins: [
+      json(),
       external(),
       resolve(),
       commonjs(),
