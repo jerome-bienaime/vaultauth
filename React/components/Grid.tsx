@@ -1,4 +1,4 @@
-import React from 'react'
+/** @jsxImportSource theme-ui */
 import {
   Container,
   Grid as GridUI,
@@ -14,7 +14,7 @@ interface GridProps {
   shuffleArray: ShuffleArray
 }
 
-export default function Grid(props: GridProps) {
+export default function GridComponent(props: GridProps) {
   return (
     <Container>
       <GridUI
