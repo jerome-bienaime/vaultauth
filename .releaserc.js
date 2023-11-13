@@ -5,6 +5,7 @@ const dateFormat = require('dateformat')
 const readFileAsync = promisify(
   require('fs').readFile
 )
+const path = require('path')
 
 // Given a `const` variable `TEMPLATE_DIR` which points to "<semantic-release-gitmoji>/lib/assets/templates"
 
