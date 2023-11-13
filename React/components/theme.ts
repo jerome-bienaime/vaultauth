@@ -17,7 +17,7 @@ export default {
     },
   },
   sizes: {
-    container: 320
+    container: 320,
   },
   buttons: {
     primary: {

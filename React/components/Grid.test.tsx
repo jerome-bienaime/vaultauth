@@ -18,6 +18,6 @@ it('renders a Grid of Rows', () => {
       ]}
     />
   )
-  const result = screen.getAllByText("1")
+  const result = screen.getAllByText('1')
   expect(result).toBeDefined()
 })

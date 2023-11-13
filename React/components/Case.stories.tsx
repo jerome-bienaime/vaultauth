@@ -1,13 +1,15 @@
 /** @jsxImportSource theme-ui */
 
-import type { Meta, StoryObj } from '@storybook/react';
+import type {
+  Meta,
+  StoryObj,
+} from '@storybook/react'
 
-import CaseComponent from './Case';
+import CaseComponent from './Case'
 import theme from './theme'
-import { ThemeUIProvider } from 'theme-ui';
+import { ThemeUIProvider } from 'theme-ui'
 
-
-const meta:Meta<typeof CaseComponent> = {
+const meta: Meta<typeof CaseComponent> = {
   title: 'atoms/Case',
   component: CaseComponent,
   parameters: {
@@ -22,13 +24,12 @@ const meta:Meta<typeof CaseComponent> = {
   ],
 }
 
-export default meta;
+export default meta
 
-type Story = StoryObj<typeof CaseComponent>;
+type Story = StoryObj<typeof CaseComponent>
 
 export const Primary: Story = {
   args: {
-    case: 0
-  }
+    case: 0,
+  },
 }
-
