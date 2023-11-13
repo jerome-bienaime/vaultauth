@@ -1,6 +1,4 @@
 /** @jsxImportSource theme-ui */
-
-import React from 'react'
 import {
   type Case as CaseType,
   type Row,
