@@ -6,7 +6,7 @@
 import {
   lib,
   VaultAuthComponent,
-} from '../dist/index-esm.js'
+} from '../dist/esm/index.js'
 
 test('should build library', () => {
   expect(lib).toBeDefined()
