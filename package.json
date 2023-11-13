@@ -30,7 +30,8 @@
     "storybook": "dotenv -- bash -c 'storybook dev -p $STORYBOOK_PORT'",
     "build-storybook": "storybook build",
     "build": "npx rollup -c --bundleConfigAsCjs",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release",
+    "clean": "yarn cache clean --all && yarn"
   },
   "resolutions": {
     "jackspeak": "^2"
