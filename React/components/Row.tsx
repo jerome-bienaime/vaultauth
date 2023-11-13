@@ -12,19 +12,11 @@ interface RowProps {
   Row: Row
 }
 
-export default function Row(
-  props: RowProps
-) {
+export default function Row(props: RowProps) {
   return (
-    <Grid
-      gap={2}
-      columns={3}
-    >
+    <Grid gap={2} columns={3}>
       {props.Row.map((row: CaseType) => (
-        <CaseComponent
-          case={row}
-          key={row}
-        />
+        <CaseComponent case={row} key={row} />
       ))}
     </Grid>
   )

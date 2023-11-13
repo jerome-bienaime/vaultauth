@@ -12,6 +12,6 @@ it('renders a Case', () => {
   render(<CaseComponent case={3} />)
 
   const result = screen.getByText('3')
-  
+
   expect(result).toBeDefined()
 })

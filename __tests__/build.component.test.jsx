@@ -1,13 +1,13 @@
 /**
  * @jest-environment jsdom
  */
+/* eslint-disable */
 import {
   screen,
   render,
 } from '@testing-library/react'
-import {VaultAuthComponent} from '../dist/component/index.js'
+import { VaultAuthComponent } from '../dist/component/index.js'
 import React from 'react'
-
 
 it('should build component', () => {
   expect(VaultAuthComponent).toBeDefined()

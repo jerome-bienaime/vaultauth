@@ -9,7 +9,7 @@ test('should mock schema', () => {
     ShuffleArraySchema.safeParse(mock)
 
   if (!result.success) {
-    console.error({mock, error: result.error})
+    console.error({ mock, error: result.error })
   }
   expect(result.success).toBe(true)
 })
