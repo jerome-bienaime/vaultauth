@@ -12,7 +12,7 @@ const packageJson = require('./package.json')
 
 export default [
   {
-    input: 'React/components/index.tsx',
+    input: 'React/index.tsx',
     output: [
       {
         file: packageJson.component,
