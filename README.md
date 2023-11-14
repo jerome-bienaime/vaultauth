@@ -60,6 +60,13 @@ export default function MyComponent() {
 }
 ```
 
+| args          | status    | description                                 |
+| ------------- | --------- | ------------------------------------------- |
+| shuffleArray  | mandatory | visual keypad                               |
+| vaultPass     | mandatory | user password                               |
+| onCaseClick   | optional  | triggered when user click a Case            |
+| onDeleteClick | optional  | triggered when user click the Delete Button |
+
 ### as a library
 
 ```typescript
