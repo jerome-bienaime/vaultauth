@@ -11,13 +11,18 @@ import { FiDelete } from 'react-icons/fi'
 
 interface VaultInputProps {
   guess: VaultInput
-  current: Case[]
-  onCancelClick: () => any
+  current?: Case[]
+  onCancelClick?: () => any
 }
 
 export default function VaultInputComponent(
   props: VaultInputProps
 ) {
+  function handleDeleteClick() {
+    if (props.onCancelClick) {
+      props.onCancelClick()
+    }
+  }
   return (
     <Container>
       <Grid
@@ -39,7 +44,10 @@ export default function VaultInputComponent(
                   className='vaultInput-input'
                   disabled
                   value={
-                    props.current[index] ?? ''
+                    props.current &&
+                    props.current[index]
+                      ? props.current[index]
+                      : ''
                   }
                   name={`guess-${index}`}
                 />
@@ -49,7 +57,7 @@ export default function VaultInputComponent(
         <Button
           type='button'
           variant='secondary'
-          onClick={props.onCancelClick}
+          onClick={handleDeleteClick}
         >
           <FiDelete />
         </Button>
