@@ -30,10 +30,6 @@ type Story = StoryObj<typeof VaultInputComponent>
 
 export const Primary: Story = {
   args: {
-    shuffleArray: [
-      [0, 1, 2],
-      [3, 4, 5],
-      [6, 7, 8],
-    ],
+    guess: [1, 2, 3, 4],
   },
 }
