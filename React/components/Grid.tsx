@@ -14,18 +14,9 @@ import {
   Types,
 } from 'tabster'
 
-interface ClickableCase {
-  case: Case
-  onClick: (value: Case) => void
-}
-
-type ClickableRow = [
-  ClickableCase,
-  ClickableCase,
-  ClickableCase,
-]
 interface GridProps {
-  shuffleArray: ClickableRow[]
+  shuffleArray: ShuffleArray
+  onCaseClick: (value: Case) => void
 }
 
 export default function GridComponent(
@@ -46,10 +37,11 @@ export default function GridComponent(
         title='Grid'
       >
         {props.shuffleArray.map(
-          (rows: ClickableRow, index: number) => (
+          (rows: Row, index: number) => (
             <RowComponent
               key={index}
               Row={rows}
+              onCaseClick={props.onCaseClick}
             />
           )
         )}

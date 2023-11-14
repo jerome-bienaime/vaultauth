@@ -14,31 +14,20 @@ it('should build component', () => {
 })
 
 it('renders Vault Auth Component', () => {
-
   function click(value) {
     console.log(value)
   }
 
   const shuffleArray = [
-    [
-      { case: 0, onClick: click },
-      { case: 1, onClick: click },
-      { case: 2, onClick: click },
-    ],
-    [
-      { case: 3, onClick: click },
-      { case: 4, onClick: click },
-      { case: 5, onClick: click },
-    ],
-    [
-      { case: 6, onClick: click },
-      { case: 7, onClick: click },
-      { case: 8, onClick: click },
-    ],
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
   ]
-  const renderer = render(
+  
+  render(
     <VaultAuthComponent
       shuffleArray={shuffleArray}
+      onCaseClick={click}
       vaultPass={[1, 2, 3, 4]}
     />
   )
