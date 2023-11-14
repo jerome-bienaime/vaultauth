@@ -60,12 +60,16 @@ export default function MyComponent() {
 }
 ```
 
-| args          | status    | description                                 |
-| ------------- | --------- | ------------------------------------------- |
-| shuffleArray  | mandatory | visual keypad                               |
-| vaultPass     | mandatory | user password                               |
-| onCaseClick   | optional  | triggered when user click a Case            |
-| onDeleteClick | optional  | triggered when user click the Delete Button |
+#### VaultAuthComponent
+
+| args                | status    | description                                 |
+| ------------------- | --------- | ------------------------------------------- |
+| shuffleArray        | mandatory | visual keypad                               |
+| vaultPass           | mandatory | user password                               |
+| onCaseClick         | optional  | triggered when user click a Case            |
+| onDeleteClick       | optional  | triggered when user click the Delete Button |
+| config              | optional  | additional config                           |
+| config.keypadAccess | optional  | authorize keyboard events                   |
 
 ### as a library
 
