@@ -5,13 +5,13 @@ import type {
   StoryObj,
 } from '@storybook/react'
 
-import VaultInputComponent from './VaultInput'
+import VaultAuthComponent from './VaultAuthComponent'
 import theme from './theme'
 import { ThemeUIProvider } from 'theme-ui'
 
-const meta: Meta<typeof VaultInputComponent> = {
-  title: 'block/VaultInput',
-  component: VaultInputComponent,
+const meta: Meta<typeof VaultAuthComponent> = {
+  title: 'component/VaultAuthComponent',
+  component: VaultAuthComponent,
   parameters: {
     layout: 'fullscreen',
   },
@@ -26,7 +26,7 @@ const meta: Meta<typeof VaultInputComponent> = {
 
 export default meta
 
-type Story = StoryObj<typeof VaultInputComponent>
+type Story = StoryObj<typeof VaultAuthComponent>
 
 export const Primary: Story = {
   args: {
@@ -35,5 +35,6 @@ export const Primary: Story = {
       [3, 4, 5],
       [6, 7, 8],
     ],
+    vaultPass: [0, 1, 2, 3],
   },
 }

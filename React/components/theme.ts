@@ -8,6 +8,7 @@ export default {
     text: '#000',
     background: '#fff',
     primary: '#07c',
+    secondary: "#f66",
     modes: {
       dark: {
         text: '#fff',
@@ -30,6 +31,9 @@ export default {
     secondary: {
       color: 'background',
       bg: 'secondary',
+      '&:hover': {
+        bg: 'text',
+      },
     },
   },
 }
