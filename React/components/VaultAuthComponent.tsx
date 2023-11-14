@@ -7,18 +7,9 @@ import {
 import GridComponent from './Grid'
 import VaultInputComponent from './VaultInput'
 
-interface ClickableCase {
-  case: Case
-  onClick: (value: Case) => void
-}
-
-type ClickableRow = [
-  ClickableCase,
-  ClickableCase,
-  ClickableCase,
-]
 interface VaultAuthComponentProps {
-  shuffleArray: ClickableRow[]
+  shuffleArray: ShuffleArray
+  onCaseClick: (value: Case) => any
   vaultPass: VaultInput
 }
 
@@ -29,6 +20,7 @@ function VaultAuthComponent(
     <>
       <GridComponent
         shuffleArray={props.shuffleArray}
+        onCaseClick={props.onCaseClick}
       />
       <VaultInputComponent
         guess={props.vaultPass}

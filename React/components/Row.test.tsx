@@ -16,11 +16,8 @@ it('renders a Row of Cases', () => {
 
   render(
     <RowComponent
-      Row={[
-        { case: "a", onClick: click },
-        { case: 1, onClick: click },
-        { case: 2, onClick: click },
-      ]}
+      Row={['a', 1, 2]}
+      onCaseClick={click}
     />
   )
 

@@ -49,10 +49,7 @@ function click(value: Case) {
 
 export const Primary: Story = {
   args: {
-    Row: [
-      { case: 0, onClick: click },
-      { case: 1, onClick: click },
-      { case: 2, onClick: click },
-    ],
+    Row: [0, 1, 2],
+    onCaseClick: click
   },
 }

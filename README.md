@@ -41,21 +41,9 @@ export default function MyComponent() {
   }
   // Keypad data coming from external ressource
   const shuffleArray = [
-    [
-      { case: 0, onClick: click },
-      { case: 1, onClick: click },
-      { case: 2, onClick: click },
-    ],
-    [
-      { case: 3, onClick: click },
-      { case: 4, onClick: click },
-      { case: 5, onClick: click },
-    ],
-    [
-      { case: 6, onClick: click },
-      { case: 7, onClick: click },
-      { case: 8, onClick: click },
-    ],
+    [0,1,2],
+    [3,4,5],
+    [6,7,8],
   ]
 
   // User vault pass
@@ -65,6 +53,7 @@ export default function MyComponent() {
   return <ThemeUIProvider theme={theme}>
   <VaultAuthComponent
     shuffleArray={shuffleArray}
+    onCaseClick={click}
     vaultPass={vaultPass}
   />
   </ThemeUIProvider>
