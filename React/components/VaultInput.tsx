@@ -1,14 +1,18 @@
 /** @jsxImportSource theme-ui */
-import { VaultInput } from '../../lib'
+import { Case, VaultInput } from '../../lib'
 import {
   Box,
+  Button,
   Container,
   Grid,
   Input,
 } from 'theme-ui'
+import { FiDelete } from 'react-icons/fi'
 
 interface VaultInputProps {
   guess: VaultInput
+  current: Case[]
+  onCancelClick: () => any
 }
 
 export default function VaultInputComponent(
@@ -18,7 +22,7 @@ export default function VaultInputComponent(
     <Container>
       <Grid
         className='vaultInput-container'
-        columns={4}
+        columns={5}
         gap={1}
       >
         {Array(props.guess.length)
@@ -33,11 +37,22 @@ export default function VaultInputComponent(
                   type='text'
                   role='input'
                   className='vaultInput-input'
+                  disabled
+                  value={
+                    props.current[index] ?? ''
+                  }
                   name={`guess-${index}`}
                 />
               </Box>
             )
           })}
+        <Button
+          type='button'
+          variant='secondary'
+          onClick={props.onCancelClick}
+        >
+          <FiDelete />
+        </Button>
       </Grid>
     </Container>
   )
