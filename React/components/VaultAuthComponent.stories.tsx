@@ -36,5 +36,6 @@ export const Primary: Story = {
       [6, 7, 8],
     ],
     vaultPass: [0, 1, 2, 3],
+    config: { keypadAccess: true },
   },
 }

@@ -5978,6 +5978,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/react-keyboard-event-handler@npm:^1":
+  version: 1.5.4
+  resolution: "@types/react-keyboard-event-handler@npm:1.5.4"
+  dependencies:
+    "@types/react": "npm:*"
+  checksum: 3654521411d38851afecc291313709bae130ca83a75a5090efc128629bd489f34d8ef25677437cf1cb0d009ddab782300af4c79474c2871d1522af23179006d0
+  languageName: node
+  linkType: hard
+
 "@types/react-syntax-highlighter@npm:10.1.0":
   version: 10.1.0
   resolution: "@types/react-syntax-highlighter@npm:10.1.0"
@@ -15060,6 +15069,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-keyboard-event-handler@npm:^1.5.4":
+  version: 1.5.4
+  resolution: "react-keyboard-event-handler@npm:1.5.4"
+  peerDependencies:
+    prop-types: 15.x || 16.x
+    react: 15.x || 16.x
+  checksum: 647e14cfc7dedb24e92f0d42d271378ffe8cdf7b40660b15decbc787a4fed90b95ee36c186881a434f4d310df6f429f5de80b4118c711f5a94a73479e09183ac
+  languageName: node
+  linkType: hard
+
 "react-lifecycles-compat@npm:^3.0.4":
   version: 3.0.4
   resolution: "react-lifecycles-compat@npm:3.0.4"
@@ -17877,6 +17896,7 @@ __metadata:
     "@types/jest": "npm:^29.5.8"
     "@types/lodash": "npm:^4.14.201"
     "@types/react": "npm:^18.2.37"
+    "@types/react-keyboard-event-handler": "npm:^1"
     "@types/react-test-renderer": "npm:^18.0.6"
     "@types/rollup-plugin-peer-deps-external": "npm:^2"
     "@typescript-eslint/eslint-plugin": "npm:^6.4.0"
@@ -17901,6 +17921,7 @@ __metadata:
     react: "npm:^18.2.0"
     react-dom: "npm:^18.2.0"
     react-icons: "npm:^4.12.0"
+    react-keyboard-event-handler: "npm:^1.5.4"
     react-test-renderer: "npm:^18.2.0"
     rollup: "npm:^4.3.1"
     rollup-plugin-peer-deps-external: "npm:^2.2.4"
