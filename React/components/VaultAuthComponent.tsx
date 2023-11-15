@@ -34,6 +34,7 @@ function VaultAuthComponent(
       password,
       setPassword,
       handleSubmit,
+      setErrors
     })
 
   const onCancelClick = () =>
@@ -51,6 +52,7 @@ function VaultAuthComponent(
       fromButton: true,
       setErrors,
     })
+  console.log(props)
 
   return (
     <Grid>
@@ -80,7 +82,6 @@ function VaultAuthComponent(
               allowedKeys={allowedKeys}
               deleteKeyEvent={onCancelClick}
               handleKeyEvent={onCaseClick}
-              submitKeyEvent={onSubmitClick}
             />
           )}
 

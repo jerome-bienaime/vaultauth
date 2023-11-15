@@ -82,9 +82,7 @@ export const KeypadAccess: Story = {
     ],
     vaultPass: [0, 1, 2, 3],
     onSubmit: (password) =>
-      password.length > 3
-        ? alert(`${password}`)
-        : alert('nope'),
+      console.log(password.length),
     config: {
       keypadAccess: true,
     },
