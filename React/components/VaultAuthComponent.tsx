@@ -1,114 +1,82 @@
 /** @jsxImportSource theme-ui */
 import React from 'react'
 import { IoArrowForwardCircleOutline } from 'react-icons/io5'
-import {
-  VaultInput,
-  ShuffleArray,
-  Case,
-} from '../../lib'
+import { Case } from '../../lib'
 import GridComponent from './Grid'
 import VaultInputComponent from './VaultInput'
 import { Button, Container, Grid } from 'theme-ui'
 import _ from 'lodash'
 import KeyboardHandler from './KeyboardHandler'
-
-interface ComponentConfig {
-  keypadAccess?: boolean
-  submitButton?: boolean
-}
-
-interface VaultAuthComponentProps {
-  shuffleArray: ShuffleArray
-  onCaseClick?: (value: Case) => any
-  onDeleteClick?: () => any
-  onSubmit?: (value: Case[]) => any
-  vaultPass: VaultInput
-  config?: ComponentConfig
-}
+import { usePassword } from '../hooks'
+import {
+  handleCancelClick,
+  handleCaseClick,
+  handleSubmit,
+} from '../handlers'
+import { VaultAuthComponentProps } from './VaultAuthComponent.d'
+import { createConfig } from '../config'
 
 function VaultAuthComponent(
   props: VaultAuthComponentProps
 ) {
-  const [password, setPassword] = React.useState<
-    Case[]
-  >([])
+  const [password, setPassword] = usePassword()
 
-  const config = Object.assign(
-    {
-      keypadAccess: false,
-      submitButton: false,
-    },
-    props.config || {}
-  )
+  const config = createConfig({ ...props.config })
 
   const allowedKeys = _.flattenDeep(
     props.shuffleArray
   ).map((item) => item.toString())
 
-  function handleCaseClick(value: Case) {
-    if (props.onCaseClick) {
-      props.onCaseClick(value)
-    }
-    if (password.length <= 4) {
-      setPassword((current: Case[]) => [
-        ...current,
-        value,
-      ])
-    }
-    if (password.length === 3) {
-      handleSubmit([...password, value])
-    }
-  }
+  const onCaseClick = (value: Case) =>
+    handleCaseClick({
+      ...props,
+      config,
+      value,
+      password,
+      setPassword,
+      handleSubmit,
+    })
 
-  function handleCancelClick() {
-    if (props.onDeleteClick) {
-      props.onDeleteClick()
-    }
-    if (password.length) {
-      setPassword((current: Case[]) =>
-        current.slice(0, -1)
-      )
-    }
-  }
+  const onCancelClick = () =>
+    handleCancelClick({
+      ...props,
+      password,
+      setPassword,
+    })
 
-  function handleSubmit(
-    submitValue?: Case[],
-    fromButton: boolean = false
-  ) {
-    if (config.submitButton && !fromButton) {
-      return
-    }
-    if (props.onSubmit) {
-      props.onSubmit(submitValue || password)
-    }
-  }
+  const onSubmitClick = () =>
+    handleSubmit({
+      ...props,
+      password,
+      config,
+      fromButton: true,
+    })
 
   return (
     <Container>
       <Grid gap={2}>
         <GridComponent
           shuffleArray={props.shuffleArray}
-          onCaseClick={handleCaseClick}
+          onCaseClick={onCaseClick}
         />
         <VaultInputComponent
           guess={props.vaultPass}
           current={password}
-          onCancelClick={handleCancelClick}
+          onCancelClick={onCancelClick}
         />
         {config.keypadAccess && (
           <KeyboardHandler
             allowedKeys={allowedKeys}
-            deleteKeyEvent={handleCancelClick}
-            handleKeyEvent={handleCaseClick}
+            deleteKeyEvent={onCancelClick}
+            handleKeyEvent={onCaseClick}
           />
         )}
 
+        {/* SubmitButtonComponent */}
         {config.submitButton && (
           <Button
             type='submit'
-            onClick={() =>
-              handleSubmit(password, true)
-            }
+            onClick={onSubmitClick}
           >
             <IoArrowForwardCircleOutline />
           </Button>
