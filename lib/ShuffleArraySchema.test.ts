@@ -1,5 +1,4 @@
 // ShuffleArraySchema.test.ts
-
 import ShuffleArraySchema from './ShuffleArraySchema'
 import { generateMock } from '@anatine/zod-mock'
 

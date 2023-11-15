@@ -1,13 +1,13 @@
 /**
  * @jest-environment jsdom
  */
+import { Case, ShuffleArray } from '../../lib'
+import Grid from './Grid'
 import {
   screen,
   render,
 } from '@testing-library/react'
-import Grid from './Grid'
 import React from 'react'
-import { Case, ShuffleArray } from '../../lib'
 
 it('renders a Grid of Rows', () => {
   function click(value: Case) {

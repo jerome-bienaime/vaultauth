@@ -1,13 +1,13 @@
 /**
  * @jest-environment jsdom
  */
+import { Case } from '../../lib'
+import RowComponent from './Row'
 import {
   screen,
   render,
 } from '@testing-library/react'
-import RowComponent from './Row'
 import React from 'react'
-import { Case } from '../../lib'
 
 it('renders a Row of Cases', () => {
   function click(value: Case) {

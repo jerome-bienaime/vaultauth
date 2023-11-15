@@ -1,8 +1,4 @@
 /** @jsxImportSource theme-ui */
-import {
-  Container,
-  Grid as GridUI,
-} from 'theme-ui'
 import type {
   ShuffleArray,
   Row,
@@ -13,6 +9,10 @@ import {
   getTabsterAttribute,
   Types,
 } from 'tabster'
+import {
+  Container,
+  Grid as GridUI,
+} from 'theme-ui'
 
 interface GridProps {
   shuffleArray: ShuffleArray

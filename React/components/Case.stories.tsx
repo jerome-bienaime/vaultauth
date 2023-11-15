@@ -1,12 +1,10 @@
 /** @jsxImportSource theme-ui */
-
+import CaseComponent from './Case'
+import theme from './theme'
 import type {
   Meta,
   StoryObj,
 } from '@storybook/react'
-
-import CaseComponent from './Case'
-import theme from './theme'
 import { ThemeUIProvider } from 'theme-ui'
 
 const meta: Meta<typeof CaseComponent> = {
@@ -32,7 +30,6 @@ type Story = StoryObj<typeof CaseComponent>
 export const Primary: Story = {
   args: {
     case: 0,
-    onClick: (value) => console.log(value)
+    onClick: (value) => console.log(value),
   },
-  
 }

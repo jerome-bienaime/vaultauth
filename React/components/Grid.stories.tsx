@@ -1,24 +1,22 @@
 /** @jsxImportSource theme-ui */
-
+import {
+  Case,
+  ShuffleArraySchema,
+} from '../../lib'
+import GridComponent from './Grid'
+import theme from './theme'
+import { generateMock } from '@anatine/zod-mock'
 import type {
   Meta,
   StoryObj,
 } from '@storybook/react'
-
-import GridComponent from './Grid'
-import theme from './theme'
-import { ThemeUIProvider } from 'theme-ui'
 import {
   createTabster,
   getGroupper,
   getMover,
   getTabsterAttribute,
 } from 'tabster'
-import { generateMock } from '@anatine/zod-mock'
-import {
-  Case,
-  ShuffleArraySchema,
-} from '../../lib'
+import { ThemeUIProvider } from 'theme-ui'
 
 var tabster = createTabster(window)
 getMover(tabster)
@@ -58,6 +56,6 @@ export const Primary: Story = {
       [3, 4, 5],
       [6, 7, 8],
     ],
-    onCaseClick: click
+    onCaseClick: click,
   },
 }

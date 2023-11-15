@@ -1,10 +1,8 @@
-import React from "react";
-import { Case } from "../../lib";
+import { Case } from '../../lib'
+import React from 'react'
 
 export default function usePassword() {
-  const state = React.useState<
-    Case[]
-  >([])
+  const state = React.useState<Case[]>([])
 
   return state
 }

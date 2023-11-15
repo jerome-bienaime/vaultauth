@@ -1,9 +1,8 @@
 # [1.6.0](https://github.com/jerome-bienaime/vaultauth/compare/v1.5.0...v1.6.0) (2023-11-15)
 
-
 ### Features
 
-* **React:** add deleteButton ([8e2b53c](https://github.com/jerome-bienaime/vaultauth/commit/8e2b53c55bf7846265863ad2d6b66980f440037c))
+- **React:** add deleteButton ([8e2b53c](https://github.com/jerome-bienaime/vaultauth/commit/8e2b53c55bf7846265863ad2d6b66980f440037c))
 
 # [1.5.0](https://github.com/jerome-bienaime/vaultauth/compare/v1.4.0...v1.5.0) (2023-11-15)
 

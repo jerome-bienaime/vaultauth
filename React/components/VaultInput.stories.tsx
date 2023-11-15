@@ -1,12 +1,10 @@
 /** @jsxImportSource theme-ui */
-
+import VaultInputComponent from './VaultInput'
+import theme from './theme'
 import type {
   Meta,
   StoryObj,
 } from '@storybook/react'
-
-import VaultInputComponent from './VaultInput'
-import theme from './theme'
 import { ThemeUIProvider } from 'theme-ui'
 
 const meta: Meta<typeof VaultInputComponent> = {

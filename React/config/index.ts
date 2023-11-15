@@ -1,2 +1,2 @@
-export {type ComponentConfig} from "./ComponentConfig"
-export {default as createConfig} from "./createConfig"
+export { type ComponentConfig } from './ComponentConfig'
+export { default as createConfig } from './createConfig'

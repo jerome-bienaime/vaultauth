@@ -1,5 +1,5 @@
-import React from 'react'
 import { Case } from '../../lib'
+import React from 'react'
 import KeyboardEventHandler from 'react-keyboard-event-handler'
 
 interface KeyboardHandlerProps {
