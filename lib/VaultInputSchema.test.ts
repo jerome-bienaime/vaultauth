@@ -1,5 +1,4 @@
 // VaultInputSchema.test.ts
-
 import VaultInputSchema from './VaultInputSchema'
 import { generateMock } from '@anatine/zod-mock'
 

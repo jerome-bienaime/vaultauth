@@ -19,6 +19,8 @@ export function handleSubmit(
     return
   }
   if (props.onSubmit) {
-    props.onSubmit(props.submitValue || props.password)
+    props.onSubmit(
+      props.submitValue || props.password
+    )
   }
 }

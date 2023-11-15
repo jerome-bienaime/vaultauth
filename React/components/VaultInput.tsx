@@ -1,5 +1,7 @@
 /** @jsxImportSource theme-ui */
 import { Case, VaultInput } from '../../lib'
+import DeleteButtonComponent from './DeleteButtonComponent'
+import { FiDelete } from 'react-icons/fi'
 import {
   Box,
   Button,
@@ -7,8 +9,6 @@ import {
   Grid,
   Input,
 } from 'theme-ui'
-import { FiDelete } from 'react-icons/fi'
-import DeleteButtonComponent from './DeleteButtonComponent'
 
 interface VaultInputProps {
   guess: VaultInput

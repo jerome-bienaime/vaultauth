@@ -1,19 +1,19 @@
 /** @jsxImportSource theme-ui */
 import { Case } from '../../lib'
-import GridComponent from './Grid'
-import VaultInputComponent from './VaultInput'
-import { Container, Grid } from 'theme-ui'
-import _ from 'lodash'
-import KeyboardHandler from './KeyboardHandler'
-import { usePassword } from '../hooks'
+import { createConfig } from '../config'
 import {
   handleCancelClick,
   handleCaseClick,
   handleSubmit,
 } from '../handlers'
-import { VaultAuthComponentProps } from './VaultAuthComponent.d'
-import { createConfig } from '../config'
+import { usePassword } from '../hooks'
+import GridComponent from './Grid'
+import KeyboardHandler from './KeyboardHandler'
 import SubmitButtonComponent from './SubmitButtonComponent'
+import { VaultAuthComponentProps } from './VaultAuthComponent.d'
+import VaultInputComponent from './VaultInput'
+import _ from 'lodash'
+import { Container, Grid } from 'theme-ui'
 
 function VaultAuthComponent(
   props: VaultAuthComponentProps
@@ -77,7 +77,6 @@ function VaultAuthComponent(
             onSubmitClick={onSubmitClick}
           />
         )}
-
       </Grid>
     </Container>
   )

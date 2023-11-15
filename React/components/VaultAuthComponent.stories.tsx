@@ -1,19 +1,17 @@
 /** @jsxImportSource theme-ui */
-
+import VaultAuthComponent from './VaultAuthComponent'
+import theme from './theme'
 import type {
   Meta,
   StoryObj,
 } from '@storybook/react'
-
-import VaultAuthComponent from './VaultAuthComponent'
-import theme from './theme'
-import { ThemeUIProvider } from 'theme-ui'
 import {
   createTabster,
   getMover,
   getGroupper,
   getTabsterAttribute,
 } from 'tabster'
+import { ThemeUIProvider } from 'theme-ui'
 
 var tabster = createTabster(window)
 getMover(tabster)
@@ -50,9 +48,9 @@ export const Primary: Story = {
       [6, 7, 8],
     ],
     onSubmit: (password) =>
-    password.length > 3
-      ? alert(`${password}`)
-      : alert('nope'),
+      password.length > 3
+        ? alert(`${password}`)
+        : alert('nope'),
     vaultPass: [1, 1, 2, 3],
   },
 }

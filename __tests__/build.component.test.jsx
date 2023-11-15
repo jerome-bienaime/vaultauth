@@ -1,12 +1,13 @@
 /**
  * @jest-environment jsdom
  */
+
 /* eslint-disable */
+import { VaultAuthComponent } from '../dist/component/index.js'
 import {
   screen,
   render,
 } from '@testing-library/react'
-import { VaultAuthComponent } from '../dist/component/index.js'
 import React from 'react'
 
 it('should build component', () => {
@@ -23,7 +24,7 @@ it('renders Vault Auth Component', () => {
     [3, 4, 5],
     [6, 7, 8],
   ]
-  
+
   render(
     <VaultAuthComponent
       shuffleArray={shuffleArray}

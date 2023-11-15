@@ -1,8 +1,8 @@
 /**
  * @jest-environment jsdom
  */
-/* eslint-disable */
 
+/* eslint-disable */
 import {
   lib,
   VaultAuthComponent,

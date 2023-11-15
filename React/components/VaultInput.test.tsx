@@ -1,11 +1,11 @@
 /**
  * @jest-environment jsdom
  */
+import VaultInput from './VaultInput'
 import {
   screen,
   render,
 } from '@testing-library/react'
-import VaultInput from './VaultInput'
 import React from 'react'
 
 it('renders Vault Input Component', () => {

@@ -1,5 +1,4 @@
 // VaultValidate.test.ts
-
 import type ShuffleArray from './ShuffleArray'
 import type VaultInput from './VaultInput'
 import VaultValidate from './VaultValidate'

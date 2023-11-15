@@ -1,11 +1,11 @@
 /**
  * @jest-environment jsdom
  */
+import CaseComponent from './Case'
 import {
   screen,
   render,
 } from '@testing-library/react'
-import CaseComponent from './Case'
 import React from 'react'
 
 it('renders a Case', () => {

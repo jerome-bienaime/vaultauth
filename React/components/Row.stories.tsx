@@ -1,20 +1,18 @@
 /** @jsxImportSource theme-ui */
-
+import { Case } from '../../lib'
+import RowComponent from './Row'
+import theme from './theme'
 import type {
   Meta,
   StoryObj,
 } from '@storybook/react'
-
-import RowComponent from './Row'
-import theme from './theme'
-import { ThemeUIProvider } from 'theme-ui'
 import {
   createTabster,
   getGroupper,
   getMover,
   getTabsterAttribute,
 } from 'tabster'
-import { Case } from '../../lib'
+import { ThemeUIProvider } from 'theme-ui'
 
 var tabster = createTabster(window)
 getMover(tabster)
@@ -50,6 +48,6 @@ function click(value: Case) {
 export const Primary: Story = {
   args: {
     Row: [0, 1, 2],
-    onCaseClick: click
+    onCaseClick: click,
   },
 }
