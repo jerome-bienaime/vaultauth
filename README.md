@@ -62,14 +62,14 @@ export default function MyComponent() {
 
 #### VaultAuthComponent
 
-| args                | status    | description                                 |
-| ------------------- | --------- | ------------------------------------------- |
-| shuffleArray        | mandatory | visual keypad                               |
-| vaultPass           | mandatory | user password                               |
-| onCaseClick         | optional  | triggered when user click a Case            |
-| onDeleteClick       | optional  | triggered when user click the Delete Button |
-| config              | optional  | additional config                           |
-| config.keypadAccess | optional  | authorize keyboard events                   |
+| args                | status        | description                                 |
+| ------------------- | ------------- | ------------------------------------------- |
+| shuffleArray        | mandatory     | visual keypad                               |
+| vaultPass           | mandatory     | user password                               |
+| onCaseClick         | optional      | triggered when user click a Case            |
+| onDeleteClick       | optional      | triggered when user click the Delete Button |
+| config              | optional      | additional config                           |
+| config.keypadAccess | default=false | authorize keyboard events                   |
 
 ### as a library
 
