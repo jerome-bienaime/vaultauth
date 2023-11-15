@@ -68,6 +68,7 @@ export default function MyComponent() {
 | vaultPass           | mandatory     | user password                               |
 | onCaseClick         | optional      | triggered when user click a Case            |
 | onDeleteClick       | optional      | triggered when user click the Delete Button |
+| SubmitButton        | optional      | SubmitButton custom component               |
 | config              | optional      | additional config                           |
 | config.keypadAccess | default=false | authorize keyboard events                   |
 | config.submitButton | default=false | show submit button                          |

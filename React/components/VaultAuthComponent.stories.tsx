@@ -40,6 +40,7 @@ export const Primary: Story = {
       keypadAccess: true,
       submitButton: true,
     },
+    SubmitButton: <button>my-submit-button</button>,
     onSubmit: (password) =>
       password.length > 3
         ? alert(`${password}`)
