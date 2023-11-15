@@ -8,11 +8,13 @@ import {
   Input,
 } from 'theme-ui'
 import { FiDelete } from 'react-icons/fi'
+import DeleteButtonComponent from './DeleteButtonComponent'
 
 interface VaultInputProps {
   guess: VaultInput
   current?: Case[]
   onCancelClick?: () => any
+  deleteButton?: React.ReactNode | JSX.Element
 }
 
 export default function VaultInputComponent(
@@ -54,13 +56,10 @@ export default function VaultInputComponent(
               </Box>
             )
           })}
-        <Button
-          type='button'
-          variant='secondary'
-          onClick={handleDeleteClick}
-        >
-          <FiDelete />
-        </Button>
+        <DeleteButtonComponent
+          component={props.deleteButton}
+          onDeleteClick={handleDeleteClick}
+        />
       </Grid>
     </Container>
   )

@@ -8,6 +8,16 @@ import type {
 import VaultAuthComponent from './VaultAuthComponent'
 import theme from './theme'
 import { ThemeUIProvider } from 'theme-ui'
+import {
+  createTabster,
+  getMover,
+  getGroupper,
+  getTabsterAttribute,
+} from 'tabster'
+
+var tabster = createTabster(window)
+getMover(tabster)
+getGroupper(tabster)
 
 const meta: Meta<typeof VaultAuthComponent> = {
   title: 'component/VaultAuthComponent',
@@ -18,7 +28,11 @@ const meta: Meta<typeof VaultAuthComponent> = {
   decorators: [
     (Story: any) => (
       <ThemeUIProvider theme={theme}>
-        <Story />
+        <div
+          {...getTabsterAttribute({ root: {} })}
+        >
+          <Story />
+        </div>
       </ThemeUIProvider>
     ),
   ],
@@ -31,6 +45,39 @@ type Story = StoryObj<typeof VaultAuthComponent>
 export const Primary: Story = {
   args: {
     shuffleArray: [
+      [1, 2, 9],
+      [3, 4, 5],
+      [6, 7, 8],
+    ],
+    vaultPass: [1, 1, 2, 3],
+    onSubmit: (password) =>
+      password.length > 3
+        ? alert(`${password}`)
+        : alert('nope'),
+  },
+}
+
+export const ButtonCustom: Story = {
+  args: {
+    shuffleArray: [
+      [0, 1, 2],
+      [3, 4, 5],
+      [6, 7, 8],
+    ],
+    vaultPass: [0, 1, 2, 3],
+    config: {
+      submitButton: true,
+    },
+    DeleteButton: <button>DELETE</button>,
+    SubmitButton: (
+      <button>my-submit-button</button>
+    ),
+  },
+}
+
+export const KeypadAccess: Story = {
+  args: {
+    shuffleArray: [
       [0, 1, 2],
       [3, 4, 5],
       [6, 7, 8],
@@ -40,10 +87,5 @@ export const Primary: Story = {
       keypadAccess: true,
       submitButton: true,
     },
-    SubmitButton: <button>my-submit-button</button>,
-    onSubmit: (password) =>
-      password.length > 3
-        ? alert(`${password}`)
-        : alert('nope'),
   },
 }
