@@ -1,5 +1,6 @@
 /** @jsxImportSource theme-ui */
 import React from 'react'
+import { IoArrowForwardCircleOutline } from 'react-icons/io5'
 import {
   VaultInput,
   ShuffleArray,
@@ -7,7 +8,7 @@ import {
 } from '../../lib'
 import GridComponent from './Grid'
 import VaultInputComponent from './VaultInput'
-import { Grid } from 'theme-ui'
+import { Button, Container, Grid } from 'theme-ui'
 import _ from 'lodash'
 import KeyboardHandler from './KeyboardHandler'
 
@@ -20,6 +21,7 @@ interface VaultAuthComponentProps {
   shuffleArray: ShuffleArray
   onCaseClick?: (value: Case) => any
   onDeleteClick?: () => any
+  onSubmit?: (value: Case[]) => any
   vaultPass: VaultInput
   config?: ComponentConfig
 }
@@ -34,7 +36,7 @@ function VaultAuthComponent(
   const config = Object.assign(
     {
       keypadAccess: false,
-      submitButton: false
+      submitButton: false,
     },
     props.config || {}
   )
@@ -53,6 +55,9 @@ function VaultAuthComponent(
         value,
       ])
     }
+    if (password.length === 3) {
+      handleSubmit([...password, value])
+    }
   }
 
   function handleCancelClick() {
@@ -65,25 +70,51 @@ function VaultAuthComponent(
       )
     }
   }
+
+  function handleSubmit(
+    submitValue?: Case[],
+    fromButton: boolean = false
+  ) {
+    if (config.submitButton && !fromButton) {
+      return
+    }
+    if (props.onSubmit) {
+      props.onSubmit(submitValue || password)
+    }
+  }
+
   return (
-    <Grid gap={2}>
-      <GridComponent
-        shuffleArray={props.shuffleArray}
-        onCaseClick={handleCaseClick}
-      />
-      <VaultInputComponent
-        guess={props.vaultPass}
-        current={password}
-        onCancelClick={handleCancelClick}
-      />
-      {config.keypadAccess && (
-        <KeyboardHandler
-          allowedKeys={allowedKeys}
-          deleteKeyEvent={handleCancelClick}
-          handleKeyEvent={handleCaseClick}
+    <Container>
+      <Grid gap={2}>
+        <GridComponent
+          shuffleArray={props.shuffleArray}
+          onCaseClick={handleCaseClick}
         />
-      )}
-    </Grid>
+        <VaultInputComponent
+          guess={props.vaultPass}
+          current={password}
+          onCancelClick={handleCancelClick}
+        />
+        {config.keypadAccess && (
+          <KeyboardHandler
+            allowedKeys={allowedKeys}
+            deleteKeyEvent={handleCancelClick}
+            handleKeyEvent={handleCaseClick}
+          />
+        )}
+
+        {config.submitButton && (
+          <Button
+            type='submit'
+            onClick={() =>
+              handleSubmit(password, true)
+            }
+          >
+            <IoArrowForwardCircleOutline />
+          </Button>
+        )}
+      </Grid>
+    </Container>
   )
 }
 export default VaultAuthComponent

@@ -36,6 +36,13 @@ export const Primary: Story = {
       [6, 7, 8],
     ],
     vaultPass: [0, 1, 2, 3],
-    config: { keypadAccess: true },
+    config: {
+      keypadAccess: true,
+      submitButton: true,
+    },
+    onSubmit: (password) =>
+      password.length > 3
+        ? alert(`${password}`)
+        : alert('nope'),
   },
 }
