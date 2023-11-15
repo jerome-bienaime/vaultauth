@@ -1,6 +1,6 @@
 # Vault Auth Component
 
-[![publish](https://github.com/jerome-bienaime/vaultauth/actions/workflows/npm-publish.yml/badge.svg)](https://github.com/jerome-bienaime/vaultauth/actions/workflows/npm-publish.yml)
+[![build](https://github.com/jerome-bienaime/vaultauth/actions/workflows/npm-build.yml/badge.svg)](https://github.com/jerome-bienaime/vaultauth/actions/workflows/npm-build.yml)
 
 Vault Auth Component is a library for dealing with
 vault-fashioned authentication
