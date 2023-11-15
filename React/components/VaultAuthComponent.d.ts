@@ -12,4 +12,5 @@ export interface VaultAuthComponentProps {
   onSubmit?: (value: Case[]) => any
   vaultPass: VaultInput
   config?: ComponentConfig
+  SubmitButton?: React.ReactNode | JSX.Element
 }

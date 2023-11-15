@@ -15,6 +15,7 @@ import {
 } from '../handlers'
 import { VaultAuthComponentProps } from './VaultAuthComponent.d'
 import { createConfig } from '../config'
+import SubmitButtonComponent from './SubmitButtonComponent'
 
 function VaultAuthComponent(
   props: VaultAuthComponentProps
@@ -72,15 +73,13 @@ function VaultAuthComponent(
           />
         )}
 
-        {/* SubmitButtonComponent */}
         {config.submitButton && (
-          <Button
-            type='submit'
-            onClick={onSubmitClick}
-          >
-            <IoArrowForwardCircleOutline />
-          </Button>
+          <SubmitButtonComponent
+            component={props.SubmitButton}
+            onSubmitClick={onSubmitClick}
+          />
         )}
+
       </Grid>
     </Container>
   )
