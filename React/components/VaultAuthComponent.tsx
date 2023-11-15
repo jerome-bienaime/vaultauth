@@ -52,7 +52,6 @@ function VaultAuthComponent(
       fromButton: true,
       setErrors,
     })
-  console.log(props)
 
   return (
     <Grid>
