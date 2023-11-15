@@ -1,9 +1,15 @@
-# [1.7.0](https://github.com/jerome-bienaime/vaultauth/compare/v1.6.1...v1.7.0) (2023-11-15)
+## [1.7.1](https://github.com/jerome-bienaime/vaultauth/compare/v1.7.0...v1.7.1) (2023-11-15)
 
+
+### Bug Fixes
+
+* **React:** update completing every input submits ([776cb5d](https://github.com/jerome-bienaime/vaultauth/commit/776cb5dfad19beca62cc108efd2fc30249cb980a))
+
+# [1.7.0](https://github.com/jerome-bienaime/vaultauth/compare/v1.6.1...v1.7.0) (2023-11-15)
 
 ### Features
 
-* **React:** add basic error component ([5199782](https://github.com/jerome-bienaime/vaultauth/commit/5199782029ec47b286079096dbcff8c4b8870c0b))
+- **React:** add basic error component ([5199782](https://github.com/jerome-bienaime/vaultauth/commit/5199782029ec47b286079096dbcff8c4b8870c0b))
 
 ## [1.6.1](https://github.com/jerome-bienaime/vaultauth/compare/v1.6.0...v1.6.1) (2023-11-15)
 
