@@ -33,6 +33,8 @@ export function handleSubmit(
           }
         )
       )
+    } else {
+      props.setErrors([])
     }
     props.onSubmit(
       props.submitValue || props.password
