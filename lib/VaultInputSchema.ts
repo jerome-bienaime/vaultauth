@@ -15,8 +15,13 @@ const NumberTuple = z.tuple([
   z.number(),
 ])
 
-const VaultInputSchema = z.union([
-  StringTuple,
-  NumberTuple,
-])
+const VaultInputSchema = z.union(
+  [StringTuple, NumberTuple],
+  {
+    errorMap: () => ({
+      message:
+        'input must be either 4 strings or 4 numbers',
+    }),
+  }
+)
 export default VaultInputSchema
