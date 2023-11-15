@@ -70,6 +70,7 @@ export default function MyComponent() {
 | onDeleteClick       | optional      | triggered when user click the Delete Button |
 | config              | optional      | additional config                           |
 | config.keypadAccess | default=false | authorize keyboard events                   |
+| config.submitButton | default=false | show submit button                          |
 
 ### as a library
 
