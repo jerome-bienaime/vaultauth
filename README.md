@@ -41,13 +41,13 @@ export default function MyComponent() {
   }
   // Keypad data coming from external ressource
   const shuffleArray = [
-    [0,1,2],
-    [3,4,5],
-    [6,7,8],
+    [ 0,1,2 ],
+    [ 3,4,5 ],
+    [ 6,7,8 ],
   ]
 
   // User vault pass
-  const vaultPass = [1,5,7,9]
+  const vaultPass = [ 1,5,7,9 ]
 
   // Use theme-ui under the hood
   return <ThemeUIProvider theme={theme}>
