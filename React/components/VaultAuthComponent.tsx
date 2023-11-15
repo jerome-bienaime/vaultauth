@@ -67,6 +67,7 @@ function VaultAuthComponent(
             allowedKeys={allowedKeys}
             deleteKeyEvent={onCancelClick}
             handleKeyEvent={onCaseClick}
+            submitKeyEvent={onSubmitClick}
           />
         )}
 
