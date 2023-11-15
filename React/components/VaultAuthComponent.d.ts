@@ -13,4 +13,5 @@ export interface VaultAuthComponentProps {
   vaultPass: VaultInput
   config?: ComponentConfig
   SubmitButton?: React.ReactNode | JSX.Element
+  DeleteButton?: React.ReactNode | JSX.Element
 }

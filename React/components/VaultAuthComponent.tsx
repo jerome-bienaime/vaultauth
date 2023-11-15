@@ -1,10 +1,8 @@
 /** @jsxImportSource theme-ui */
-import React from 'react'
-import { IoArrowForwardCircleOutline } from 'react-icons/io5'
 import { Case } from '../../lib'
 import GridComponent from './Grid'
 import VaultInputComponent from './VaultInput'
-import { Button, Container, Grid } from 'theme-ui'
+import { Container, Grid } from 'theme-ui'
 import _ from 'lodash'
 import KeyboardHandler from './KeyboardHandler'
 import { usePassword } from '../hooks'
@@ -21,12 +19,10 @@ function VaultAuthComponent(
   props: VaultAuthComponentProps
 ) {
   const [password, setPassword] = usePassword()
-
   const config = createConfig({ ...props.config })
-
   const allowedKeys = _.flattenDeep(
     props.shuffleArray
-  ).map((item) => item.toString())
+  ).map((item) => `${item}`.toString())
 
   const onCaseClick = (value: Case) =>
     handleCaseClick({
@@ -64,6 +60,7 @@ function VaultAuthComponent(
           guess={props.vaultPass}
           current={password}
           onCancelClick={onCancelClick}
+          deleteButton={props.DeleteButton}
         />
         {config.keypadAccess && (
           <KeyboardHandler
