@@ -1,4 +1,5 @@
 import { Case } from '../../lib'
+import { VaultInputSchema } from '../../lib'
 import { ComponentConfig } from '../config'
 
 interface handleSubmitProps {
@@ -7,6 +8,7 @@ interface handleSubmitProps {
   fromButton: boolean
   config: ComponentConfig
   onSubmit?: (value: Case[]) => any
+  setErrors: React.ComponentState
 }
 
 export function handleSubmit(
@@ -19,6 +21,19 @@ export function handleSubmit(
     return
   }
   if (props.onSubmit) {
+    const validVaultPass =
+      VaultInputSchema.safeParse(
+        props.submitValue || props.password
+      )
+    if (!validVaultPass.success) {
+      props.setErrors(
+        validVaultPass.error.issues.map(
+          (issue) => {
+            return issue.message
+          }
+        )
+      )
+    }
     props.onSubmit(
       props.submitValue || props.password
     )

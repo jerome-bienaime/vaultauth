@@ -1,10 +1,6 @@
 /** @jsxImportSource theme-ui */
-import {
-  Case,
-  ShuffleArraySchema,
-  ValueInputSchema,
-  VaultValidate,
-} from '../../lib'
+import React from 'react'
+import { Case } from '../../lib'
 import { createConfig } from '../config'
 import {
   handleCancelClick,
@@ -18,51 +14,17 @@ import SubmitButtonComponent from './SubmitButtonComponent'
 import { VaultAuthComponentProps } from './VaultAuthComponent.d'
 import VaultInputComponent from './VaultInput'
 import _ from 'lodash'
-import { Container, Grid } from 'theme-ui'
+import { Alert, Container, Grid } from 'theme-ui'
 
 function VaultAuthComponent(
   props: VaultAuthComponentProps
 ) {
   const [password, setPassword] = usePassword()
+  const [errors, setErrors] = React.useState([])
   const config = createConfig({ ...props.config })
   const allowedKeys = _.flattenDeep(
     props.shuffleArray
   ).map((item) => `${item}`.toString())
-
-  // @todo better handling of errors
-  const validVaultPass =
-    ValueInputSchema.safeParse(props.vaultPass)
-  if (!validVaultPass.success) {
-    console.error(validVaultPass.error)
-    return (
-      <>
-        Error occured, handling is not optimized.
-      </>
-    )
-  }
-  const validShuffleError =
-    ShuffleArraySchema.safeParse(
-      props.shuffleArray
-    )
-  if (!validShuffleError.success) {
-    console.error(validShuffleError.error)
-    return (
-      <>
-        Error occured, handling is not optimized.
-      </>
-    )
-  }
-  const isValid = VaultValidate({ ...props })
-  if (!isValid) {
-    console.error(
-      `vaultAuthComponent: shuffleArray is not containing vaultPass`
-    )
-    return (
-      <>
-        Error occured, handling is not optimized.
-      </>
-    )
-  }
 
   const onCaseClick = (value: Case) =>
     handleCaseClick({
@@ -87,38 +49,50 @@ function VaultAuthComponent(
       password,
       config,
       fromButton: true,
+      setErrors,
     })
 
   return (
-    <Container>
-      <Grid gap={2}>
-        <GridComponent
-          shuffleArray={props.shuffleArray}
-          onCaseClick={onCaseClick}
-        />
-        <VaultInputComponent
-          guess={props.vaultPass}
-          current={password}
-          onCancelClick={onCancelClick}
-          deleteButton={props.DeleteButton}
-        />
-        {config.keypadAccess && (
-          <KeyboardHandler
-            allowedKeys={allowedKeys}
-            deleteKeyEvent={onCancelClick}
-            handleKeyEvent={onCaseClick}
-            submitKeyEvent={onSubmitClick}
+    <Grid>
+      {errors.length !== 0 && (
+        <div>
+          {errors.map((error: string) => (
+            <Alert variant='secondary' mb="2">
+              {error.toString()}
+            </Alert>
+          ))}
+        </div>
+      )}
+      <Container>
+        <Grid gap={2}>
+          <GridComponent
+            shuffleArray={props.shuffleArray}
+            onCaseClick={onCaseClick}
           />
-        )}
+          <VaultInputComponent
+            guess={props.vaultPass}
+            current={password}
+            onCancelClick={onCancelClick}
+            deleteButton={props.DeleteButton}
+          />
+          {config.keypadAccess && (
+            <KeyboardHandler
+              allowedKeys={allowedKeys}
+              deleteKeyEvent={onCancelClick}
+              handleKeyEvent={onCaseClick}
+              submitKeyEvent={onSubmitClick}
+            />
+          )}
 
-        {config.submitButton && (
-          <SubmitButtonComponent
-            component={props.SubmitButton}
-            onSubmitClick={onSubmitClick}
-          />
-        )}
-      </Grid>
-    </Container>
+          {config.submitButton && (
+            <SubmitButtonComponent
+              component={props.SubmitButton}
+              onSubmitClick={onSubmitClick}
+            />
+          )}
+        </Grid>
+      </Container>
+    </Grid>
   )
 }
 export default VaultAuthComponent

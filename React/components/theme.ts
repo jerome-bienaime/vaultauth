@@ -36,4 +36,10 @@ export default {
       },
     },
   },
+  alerts: {
+    secondary: {
+      color: 'background',
+      bg: 'secondary',
+    },
+  },
 }
