@@ -1,9 +1,15 @@
-## [1.6.1](https://github.com/jerome-bienaime/vaultauth/compare/v1.6.0...v1.6.1) (2023-11-15)
+# [1.7.0](https://github.com/jerome-bienaime/vaultauth/compare/v1.6.1...v1.7.0) (2023-11-15)
 
+
+### Features
+
+* **React:** add basic error component ([5199782](https://github.com/jerome-bienaime/vaultauth/commit/5199782029ec47b286079096dbcff8c4b8870c0b))
+
+## [1.6.1](https://github.com/jerome-bienaime/vaultauth/compare/v1.6.0...v1.6.1) (2023-11-15)
 
 ### Bug Fixes
 
-* **React:** update keypadAccess to submit on enter ([ecf129c](https://github.com/jerome-bienaime/vaultauth/commit/ecf129c505fdb5fe520703c0b9e59c10cb3a243c))
+- **React:** update keypadAccess to submit on enter ([ecf129c](https://github.com/jerome-bienaime/vaultauth/commit/ecf129c505fdb5fe520703c0b9e59c10cb3a243c))
 
 # [1.6.0](https://github.com/jerome-bienaime/vaultauth/compare/v1.5.0...v1.6.0) (2023-11-15)
 
