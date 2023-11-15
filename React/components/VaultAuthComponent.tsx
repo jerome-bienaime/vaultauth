@@ -1,5 +1,10 @@
 /** @jsxImportSource theme-ui */
-import { Case } from '../../lib'
+import {
+  Case,
+  ShuffleArraySchema,
+  ValueInputSchema,
+  VaultValidate,
+} from '../../lib'
 import { createConfig } from '../config'
 import {
   handleCancelClick,
@@ -23,6 +28,41 @@ function VaultAuthComponent(
   const allowedKeys = _.flattenDeep(
     props.shuffleArray
   ).map((item) => `${item}`.toString())
+
+  // @todo better handling of errors
+  const validVaultPass =
+    ValueInputSchema.safeParse(props.vaultPass)
+  if (!validVaultPass.success) {
+    console.error(validVaultPass.error)
+    return (
+      <>
+        Error occured, handling is not optimized.
+      </>
+    )
+  }
+  const validShuffleError =
+    ShuffleArraySchema.safeParse(
+      props.shuffleArray
+    )
+  if (!validShuffleError.success) {
+    console.error(validShuffleError.error)
+    return (
+      <>
+        Error occured, handling is not optimized.
+      </>
+    )
+  }
+  const isValid = VaultValidate({ ...props })
+  if (!isValid) {
+    console.error(
+      `vaultAuthComponent: shuffleArray is not containing vaultPass`
+    )
+    return (
+      <>
+        Error occured, handling is not optimized.
+      </>
+    )
+  }
 
   const onCaseClick = (value: Case) =>
     handleCaseClick({
