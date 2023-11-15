@@ -6,6 +6,7 @@ interface KeyboardHandlerProps {
   allowedKeys: Case[]
   handleKeyEvent: (key: string) => any
   deleteKeyEvent: () => any
+  submitKeyEvent: () => any
 }
 
 export default function KeyboardHandler(
@@ -13,6 +14,12 @@ export default function KeyboardHandler(
 ) {
   return (
     <>
+      <KeyboardEventHandler
+        handleKeys={['return']}
+        onKeyEvent={(key, e) =>
+          props.submitKeyEvent()
+        }
+      />
       <KeyboardEventHandler
         handleKeys={['del', 'backspace']}
         onKeyEvent={(key, e) =>
