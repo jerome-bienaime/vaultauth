@@ -8,6 +8,7 @@ interface handleCaseClickProps {
   setPassword: React.ComponentState
   onCaseClick?: (value: Case) => any
   handleSubmit: (handleSubmitProps: any) => any
+  setErrors: React.ComponentState
 }
 
 export function handleCaseClick(
@@ -24,8 +25,8 @@ export function handleCaseClick(
   }
   if (props.password.length === 3) {
     props.handleSubmit({
+      ...props,
       password: [...props.password, props.value],
-      config: props.config,
     })
   }
 }
